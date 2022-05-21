@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../templates/homeWork.css">
+    <script src="homeWork.js"></script>
     <title>InbarPage</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body style="background-color:rgba(214, 249, 250, 0.924) ">
-    <h1>welcome to inbar's page</h1>
-    <hr/>
-    <p> 
-        <h2><i>Please fill in the blank fields </i> </h2> 
-    </p>
-    <form action="URL" method="post" 
-    style="width: 200px;
-    border: 15px solid blue;
-    background-color:rgb(48, 89, 221) ;
-    padding: 100px;
-    margin: 50px;">
-        <label FOR ="">First name</label>
-         <br>
-        <input type="text" id="First name" name="First name"
-         style="color:cornflowerblue; background-color: cornflowerblue;">
-        <br><br>
-        <label FOR ="">Last name</label> 
-        <br>
-        <input type="text" id="Last name" name="Last name"
-        style="color: cornflowerblue; background-color: cornflowerblue;">
-        <br><br>
-        <label for="email">Email</label>
-        <br><br>
-        <input type="email" id="email" name="email" 
-        style="color:cornflowerblue; background-color: cornflowerblue;"
-        pattern=".*@">
-        <br><br>
-        <label for="radio">Vaccine</label>
-        <input type="radio" name="radio" id="radio">
-        <br><br>
-        <input type="submit" value="submit">
-    </form>
-<a href="page2.html" target="_blank"> <h2>Next Page</h2> </a>
+<header>
+    <h1 class="title"><i>welcome to inbar's page</i></h1>
+</header>
 
-    <footer>
-    </footer>
+<body class="homePage">
+    
+    <div class="grid_container">
+        <div class="welcome_text" id="text_ext">
+            hope this website can help you find sime new places!
+        </div>
+        <div class="video_btn">
+            <button class="open_video" id="video_button" onclick="showVideo()">taste of Aoustralia:</button>
+        </div>
+        <div class="video_A">
+            <video id="Australia_video" controls>
+                <source src="../static/20181216_181824.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="geep" id="green_geep">
+            <img src="../static/green van.webp" id="imgJ">
+        </div>
+
+    </div>
+
+    <span class="menu__icon1" id="open" style='font-size:60px;' onmouseover="openNav()">&#9776;</span>
+
+    <nav id="navigation" class="text_menu">
+        <aside class="sidebar">
+            <ul>
+                <li> <a href="southAmerica.asp">south-America</a></li>
+                <li> <a href="Australia.html" target="_blank" id="AustraliaPage">Aoustralia</a></li>
+                <li> <a href="NorthIsrael.asp">North of Israel</a></li>
+                <li> <a href="leave details.html">Leave Details</a></li>
+                <li> <a href="homePage.html">home Page</a></li>
+            </ul>
+            <span class="menu__close" id="close_button" onclick="closeNav()">&times;</span>
+        </aside>
+    </nav>
+    <!---->
+
 </body>
+
 </html>
