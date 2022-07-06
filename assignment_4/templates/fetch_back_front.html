@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }} ass_4{% endblock %}
+
+{% block headhead %}
+    <link rel="stylesheet" href="{{ url_for('assignment_4.static', filename='ass_4_css.css') }}"/>
+    <script src="{{ url_for('assignment_4.static', filename='ass_4_js.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <body class="homePage">
+
+    <div class="entry-title">
+        <h1>Frontend</h1>
+    </div>
+    <div class="user_click_fronted">
+        User List:
+        <input type="number" name="user_id" id="user_id_ins">
+        <button onclick="myFunction()">Click me</button>
+    </div>
+
+    <div class="user_list_fronted">
+        <main>
+        </main>
+    </div>
+
+    <div class="entry-title">
+        <h1>Backend</h1>
+    </div>
+
+    <div class="user_click_fronted">
+        <form action="/fetch_be" method="get">
+            Id:
+            <input type="number" name="num_id" value={{ session.num | default(1, true) }}>
+            <input type="submit" value="get user details">
+        </form>
+    </div>
+
+    <div class="user_list_fronted">
+        {% if session.picked_user %}
+            {% for user in session.picked_user %}
+                <img src="{{ user.data.avatar }}" alt="pic">
+                <h4>email: {{ user.email }}</h4>
+                <h4>Name: {{ user.first_name }}</h4>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+
+    </body>
+{% endblock %}

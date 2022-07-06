@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }} ass{% endblock %}
+
+{% block content %}
+    {{ super() }}
+
+    <body class="homePage">
+    {% if user_info %}
+        <div class="Container_ass_1">
+            <h1>About Me:</h1>
+            {% for title, value in user_info.items() %}
+                <h3>{{ title }}: {{ value }}</h3>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="Container_ass_1">
+            <h1>Favorite Sports:</h1>
+            {% for sport in sports %}
+                {% if sports.index(sport)%2==0 %}
+                <li><h3>{{ sport | lower() }}</h3></li>
+                 {% else %}
+                <li><h2>{{ sport | lower() }}</h2>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <br>
+        <div class="Container_ass_1">
+            <h1>Favorite Movies:</h1>
+            {% for movie in movies %}
+                {% if movies.index(movie)%2==0 %}
+                    <li><h3>{{ movie | title() }}</h3></li>
+                {% else %}
+                    <li><h2>{{ movie | title() }}</h2></li>
+                {% endif %}
+            {% endfor %}
+        </div>
+         {% include('ass3_extra.html') %}
+    {% endif %}
+
+    </body>
+
+{% endblock %}

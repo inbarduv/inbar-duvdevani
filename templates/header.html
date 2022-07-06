@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    <script defer src="{{ url_for('static', filename = 'js.js') }}"></script>
+
+</head>
+<body>
+    <div class="reg_txt">
+        {% if session['Registered'] %}
+            <h1>Hey {{ session['nickname'] | title() }}</h1>
+        {% endif %}
+    </div>
+</body>
+</html>

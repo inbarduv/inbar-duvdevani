@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }} Search Page{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <body class="homePage">
+    <div class="Container_ass_2">
+        <h3>Register Form</h3>
+        <form action="/assignment3_2" method="get">
+            <input type="text" name="user_name" placeholder="User Name"><br><br>
+            <input type="submit" value="Search" class="button">
+        </form>
+    </div>
+
+    {# if the input is a user that is not in the user_dict #}
+    {% if message %}
+        <div class="bad_message">
+            {{ message }}
+        </div>
+    {% endif %}
+
+    {# if the input a user that is in the user_dict #}
+    {% if user_username %}
+        <div class="ass_2_ans_searchForm">
+            <a>User name: {{ user_username }}</a><br>
+            <a>LastName: {{ user_lastname }}</a><br>
+            <a>Email: {{ user_email }}</a><br>
+            <a>Age: {{ user_age }}</a><br>
+            <a>nickname: {{ nickname }}</a>
+        </div>
+    {% endif %}
+
+    {# if the input is empty and we click "search" #}
+    {% if user_dict %}
+        {% for m, n in user_dict.items() %}
+            <div class="ass_2_ans_searchForm">
+                <a>UserName: {{ m }}</a><br>
+                <a>LastName: {{ n[1] }}</a><br>
+                <a>Email: {{ n[0] }}</a><br>
+                <a>nickname: {{ n[3] }}</a><br>
+                <a>Age: {{ n[2] }}</a><br>
+            </div>
+        {% endfor %}
+
+    {% endif %}
+
+    {# ------------------------------------second form--------------------- #}
+    {% if session['Registered'] %}
+
+        <div class="logOut">
+            <a href="/log_out">
+                <input value="Log Out" class="button" type="submit"/>
+            </a>
+        </div>
+
+        {% if message2 %}
+            <div class="logOut">
+               <h3>{{ message2 }}</h3>
+            </div>
+        {% endif %}
+
+    {% else %}
+        <div class="Container_ass_2">
+            <h3>Register Form</h3>
+            <form action="/assignment3_2" method="post">
+                <input type="text" name="username" placeholder="User Name" required><br><br>
+                <input type="text" name="user_lastname" placeholder="User Last Name" required><br><br>
+                <input type="text" name="nickname" placeholder="User nickname" required><br><br>
+                <input type="email" name="email" placeholder="User Email" required><br><br>
+                <input type="int" name="age" placeholder="User Age" required><br><br>
+                <input type="submit" value="Register" class="button">
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}

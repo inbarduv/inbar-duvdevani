@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }} ass_4{% endblock %}
+
+{% block headhead %}
+    <link rel="stylesheet" href="{{ url_for('assignment_4.static', filename='ass_4_css.css') }}"/>
+    <script src="{{ url_for('assignment_4.static', filename='ass_4_js.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+
+    <body class="homePage">
+
+     <div class="entry-title">
+        <h1>Json format</h1>
+    </div>
+
+     <br><br><br><br>
+
+    <div class="user_list_fronted">
+        <h4> {{ user }} </h4>
+    </div>
+
+      {% if session['errorMessage'] %}
+        <div class="bad_message">
+           <h3>{{ session['errorMessage'] }}</h3><br>
+        </div>
+    {% endif %}
+    </body>
+{% endblock %}

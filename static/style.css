@@ -1,0 +1,304 @@
+/*-----------------------------navBar--------------------------------------------*/
+.text_menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    display: none;
+
+}
+
+.text_menu .sidebar {
+    height: 100%;
+    width: 280px;
+    display: flex;
+    display: block;
+    opacity: 0.7; /*transparency*/
+}
+
+
+/*the other pages on the menu*/
+.text_menu .sidebar ul a {
+    padding: 50px 50px 50px 40px; /*gap between the links-top,right,bottom,left*/
+    flex-direction: column; /*order the links in column*/
+    display: flex;
+    font-size: 30px;
+    color: white;
+    left: 0;
+    font-weight: bold;
+    text-decoration: none; /*no line under the link*/
+
+}
+
+.menu__icon1 {
+    font-size: 20px;
+    position: absolute;
+    color: darkred;
+    left: 10px;
+    top: 10px;
+    align-items: center;
+}
+
+.menu__close {
+    position: absolute;
+    top: 0;
+    color: white;
+    left: 200px;
+    font-size: 70px; /*size of the icon*/
+}
+
+.active {
+    background-color: rgb(42, 23, 8);
+}
+
+li {
+    display: inline;
+}
+
+/*-------------------------------geep animation---------------------------------------------*/
+#imgJ {
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes green_geep {
+
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(600px);
+    }
+    60% {
+        transform: translateX(1200px);
+    }
+    80% {
+        transform: translateX(50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+div {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/*-------------------------------body backrounds-----------------------------------*/
+body.homePage {
+    background-image: url("../static/animated_landscape.jpg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: lighten;
+}
+
+body.details {
+    background-image: url("../static/details_backround.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-size: 2000px 2000px;
+    background-blend-mode: lighten;
+}
+
+
+.grid_container {
+    display: grid;
+    grid-template-areas:
+        'head'
+        'welcomeTxt'
+        'video'
+        'geep';
+}
+
+/*-------------------------------homePage-----------------------------------*/
+
+.google_link{
+    position: absolute;
+    color: wheat;
+    right: 100px;
+    font-size: 30px;
+}
+
+#Australia_video {
+    width: 540px;
+    height: 240px;
+    border-radius: 10px;
+    border: 5px solid rgb(255, 127, 47);
+    left: 30%;
+    top: 40%;
+    position: absolute;
+    grid-area: video;
+    display: none;
+}
+
+.geep {
+    grid-area: geep;
+    width: 10px;
+    height: 10px;
+    margin-top: 25%;
+    margin-left: 0px;
+    animation-name: green_geep;
+    animation-iteration-count: 1;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+    animation-direction: normal;
+}
+
+.title {
+    color: black;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        grid-template-areas:
+            'head'
+            'welcomeTxt'
+            'video'
+            'geep';
+    }
+}
+
+.open_video {
+    height: 30px;
+    width: 200px;
+    margin-top: 30%;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgb(255, 127, 47);
+    font-weight: bold;
+}
+
+/*-----------------------------fill details box-"leave details page"-------------------------*/
+.fill_details_box {
+    width: 300px;
+    border-radius: 10%;
+    font-size: 20px;
+    border-style: outset;
+    background-color: rgba(230, 118, 181, 0.797);
+    padding: 40px;
+    /*margin: center;*/
+    border-width: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.input_box {
+    background-color: white;
+    color: black;
+    height: 30px;
+    width: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+}
+
+.submit_button {
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.submit_button:hover {
+    background-color: rgb(162, 8, 162);
+}
+
+.radio {
+    display: inline-flex;
+}
+
+/*-----------------------------assignment3_1-------------------------*/
+
+.Container_ass_1 {
+    width: 300px;
+    border-radius: 10%;
+    font-size: 20px;
+    border-style: outset;
+    background-color: rgba(9, 152, 204, 0.57);
+    padding: 40px;
+    /*margin: center;*/
+    border-width: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.Container_ass_1 .type1_values {
+    color: wheat;
+}
+
+/*-----------------------------assignment3_2-------------------------*/
+
+.Container_ass_2 {
+    width: 300px;
+    border-radius: 10%;
+    font-size: 20px;
+    border-style: outset;
+    background-color: rgba(255, 226, 41, 0.36);
+    padding: 40px;
+    font-family: Tahoma;
+    /*margin: center;*/
+    border-width: 10px;
+}
+
+.ass_2_ans_searchForm {
+    width: 300px;
+    border-radius: 10%;
+    font-size: 20px;
+    border-style: outset;
+    background-color: rgba(127, 41, 255, 0.38);
+    padding: 40px;
+    font-family: Tahoma;
+    /*margin: center;*/
+    border-width: 10px;
+}
+
+.bad_message {
+    width: 300px;
+    border-radius: 10%;
+    font-size: 20px;
+    border-style: outset;
+    background-color: rgba(255, 41, 41, 0.71);
+    padding: 40px;
+    font-family: Tahoma;
+    /*margin: center;*/
+    border-width: 10px;
+}
+
+.red_message {
+    width: 300px;
+    font-size: 40px;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logOut {
+    width: 300px;
+    font-size: 20px;
+    padding: 20px;
+    font-family: Tahoma;
+}
+
+/*-----------------------------header-------------------------*/
+.reg_txt {
+    width: 300px;
+    font-size: 20px;
+    padding: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: wheat;
+}
+
+/*-----------------------------ass3_extra.html-------------------------*/
+.img_movies {
+    font-size: 20px;
+    padding: 10px;
+}

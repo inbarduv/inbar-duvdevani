@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }} leave details{% endblock %}
+
+{% block content %}
+
+    <body class="details">
+
+    <span class="menu__icon1" id="open" style='font-size:60px;' onmouseover="openNav()">&#9776;</span>
+
+
+    <div class="fill_details_box" action="URL" method="post">
+        <label FOR=""><b>First name</b></label>
+        <br>
+        <input type="text" id="First name" name="First name" class="input_box">
+        <br><br>
+        <label FOR=""><b>Last name</b></label>
+        <br>
+        <input type="text" id="Last name" name="Last name" class="input_box">
+        <br><br>
+        <label FOR=""><b>City</b></label>
+        <br>
+        <input type="text" id="City" name="City" class="input_box">
+        <br><br>
+        <label for="email"><b>Email</b></label>
+        <br>
+        <input type="email" id="email" name="email" class="input_box" pattern=".*@">
+        <br><br>
+        <span>
+        <label for="Vaccine" class="radio"><b>Vaccine</b></label>
+        <br>
+        <input type="radio" name="radio_vaccine" id="Vaccine" class="radio_input">
+        <br><br>
+
+        <label for="Traveled alone before?"><b>Traveled alone before?</b></label>
+        <br>
+        <input type="radio" name="radio_travel" id="radio Yes">
+        <label for="radio Yes"><b>Yes</b></label>
+        <input type="radio" name="radio_travel" id="radio No">
+        <label for="radio No"><b>No</b></label>
+        <br><br>
+    </span>
+        <button class="submit_button" href="">submit</button>
+    </div>
+
+    </body>
+
+{% endblock %}

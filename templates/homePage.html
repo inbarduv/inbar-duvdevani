@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }} home page{% endblock %}
+
+{% block content %}
+    {{ super() }}
+
+    <body class="homePage">
+    <div >
+        <li ><a class="google_link" href="/google">Back to Google</a></li>
+    </div>
+
+    <div class="grid_container">
+        <div class="video_btn">
+            <button class="open_video" id="video_button" onclick="showVideo()">taste of Aoustralia:</button>
+        </div>
+        <div class="video_A">
+            <video id="Australia_video" controls>
+                <source src="{{ url_for('static', filename='seaVideo.mp4') }}" type="video/mp4"></source>
+            </video>
+        </div>
+        <div class="geep" id="green_geep">
+            <image src="{{ url_for('static',filename='green van.webp') }}" id="imgJ"></image>
+        </div>
+
+    </div>
+
+    <span class="menu__icon1" id="open" style='font-size:60px;' onmouseover="openNav()">&#9776;</span>
+    <!---->
+
+    </body>
+{% endblock %}

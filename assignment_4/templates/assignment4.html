@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %} {{ title }} ass_4{% endblock %}
+
+{% block headhead %}
+    <link rel="stylesheet" href="{{ url_for('assignment_4.static', filename='ass_4_css.css') }}"/>
+    <script src="{{ url_for('assignment_4.static', filename='ass_4_js.js') }}"></script>
+
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <body class="homePage">
+    <!--------------------------------INSERT--------------------------------->
+    <div class="fill_input_box">
+        <h1>Insert form</h1>
+        <form action="insert_user" method="post">
+            <input type="int" name="id" placeholder="id">
+            <input type="text" name="user_name" placeholder="user name">
+            <input type="text" name="last_name" placeholder="last name">
+            <input type="text" name="email" placeholder="email">
+            <input type="text" name="nick_name" placeholder="nick name">
+            <input type="int" name="age" placeholder="age"><br>
+            <input type="submit">
+        </form>
+    </div>
+
+    <div>
+        {% if session['INSERTED'] %}
+            <h1>{{ session['insert_message'] | title() }}</h1>
+        {% endif %}
+    </div>
+
+    <!--------------------------------UPDATE-------------------------------->
+    <div class="fill_input_box">
+        <h1>Update:</h1>
+        {% if updateMessage %}
+            <h3>{{ updateMessage }}</h3>
+        {% endif %}
+        <form action="/update_user" method="post">
+            <input type="int" name="id" placeholder="id" required><br>
+            <input type="text" name="user_name" placeholder="user Name" required><br>
+            <input type="text" name="last_name" placeholder="last Name" required><br>
+            <input type="email" name="email" placeholder="email" required><br>
+            <input type="text" name="nick_name" placeholder="nick name" required><br>
+            <input type="int" name="age" placeholder="age" required><br>
+            <input type="submit" value="Update" class="button">
+        </form>
+    </div>
+
+    <div>
+        {% if session['UPDATE'] %}
+            <h1>{{ session['update_message'] | title() }}</h1>
+        {% endif %}
+    </div>
+    <!---pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]"/-->
+    <!--------------------------------DELETE------------------------------>
+    <div class="fill_input_box">
+        <h1>Delete user:</h1>
+        {% if deleteMessage %}
+            <h3>{{ deleteMessage }}</h3>
+        {% endif %}
+        <form action="/delete_user" method="post">
+             <input type="int" name="id" placeholder="id"><br><br>
+            <input type="submit" value="Delete" class="button">
+        </form>
+    </div>
+
+    <div>
+        {% if session['DELETED'] %}
+            <h1>{{ session['delete_message'] | title() }}</h1>
+        {% endif %}
+    </div>
+    <!--------------------------------LIST OF USERS------------------------------>
+
+        {% for user in users_list %}
+            <div class="fill_details_box">
+                ID: {{ user.id}} <br>
+                User Name: {{ user.user_name }} <br>
+                Last Name: {{ user.last_name }} <br>
+                Email: {{ user.email }} <br>
+                Nick Name: {{ user.nick_name }} <br>
+                Age:{{ user.age }}
+            </div>
+        {% endfor %}
+
+    </body>
+
+{% endblock %}

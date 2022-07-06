@@ -1,0 +1,36 @@
+.fill_input_box {
+    width: 300px;
+    border-radius: 10%;
+    font-size: 20px;
+    border-style: outset;
+    background-color: rgba(127, 41, 255, 0.38);
+    padding: 40px;
+    /*margin: center;*/
+    border-width: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.entry-title {
+    margin-top: 5%;
+    margin-left: 0%;
+    font-size: xx-large;
+    color: rgba(103, 2, 255, 0.38);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image:  url("../static/media/animated_landscape.jpg.jpg");;
+}
+
+.user_click_fronted {
+    width: 150px;
+    border-radius: 10%;
+    font-size: 20px;
+    border-style: outset;
+    background-color: rgba(255, 41, 155, 0.38);
+    padding: 30px;
+    border-width: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.user_list_fronted {
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
